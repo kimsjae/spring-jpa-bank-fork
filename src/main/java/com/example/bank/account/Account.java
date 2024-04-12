@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -34,10 +35,10 @@ public class Account {
     private Boolean status; // true, false
 
     @CreationTimestamp
-    private LocalDateTime createdAt;
+    private Timestamp createdAt;
 
     @Builder
-    public Account(Long id, User user, Integer number, String password, Long balance, Boolean status, LocalDateTime createdAt) {
+    public Account(Long id, User user, Integer number, String password, Long balance, Boolean status, Timestamp createdAt) {
         this.id = id;
         this.user = user;
         this.number = number;
