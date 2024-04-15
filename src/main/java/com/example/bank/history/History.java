@@ -22,11 +22,9 @@ public class History {
     private Long id;
 
     // select * from history_tb where sender = 1111 or receiver = 1111;
-    @JsonIgnoreProperties({"user"})
     @ManyToOne(fetch = FetchType.LAZY)
     private Account sender; // 보낸이 (1)
 
-    @JsonIgnoreProperties({"user"})
     @ManyToOne(fetch = FetchType.LAZY)
     private Account receiver; // 받는이 (2)
 
