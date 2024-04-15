@@ -19,4 +19,10 @@ public class UserController {
         String jwt = userService.로그인(reqDTO.getUsername(), reqDTO.getPassword());
         return ResponseEntity.ok().header("Authorization", "Bearer "+jwt).body(new ApiUtil(null));
     }
+
+    @PostMapping("/join")
+    public ResponseEntity<?> join(@RequestBody UserRequest.JoinDTO reqDTO) {
+        userService.회원가입(reqDTO);
+        return ResponseEntity.ok(new ApiUtil(null));
+    }
 }
